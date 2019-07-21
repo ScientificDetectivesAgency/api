@@ -1,2 +1,9 @@
 -e ../../
-Flask-GraphQL
+sqlalchemy
+geoalchemy2
+psycopg2
+flask
+flask-graphql
+shapely
+graphene
+graphene-sqlalchemy
