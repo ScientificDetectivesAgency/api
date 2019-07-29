@@ -28,20 +28,11 @@ class DimColonia(Base):
         Geometry(geometry_type='MULTIPOLYGON',srid = 6362), nullable = True)
     colonia_geom_4326 = Column(
         Geometry(geometry_type='MULTIPOLYGON',srid = 4326), nullable = True)
-    colonia_geom_6362_json = column_property(
-        func.ST_AsGeoJSON(func.ST_Transform(colonia_geom_6362, 6362)))
-    colonia_geom_4326_json = column_property(
-        func.ST_AsGeoJSON(func.ST_Transform(colonia_geom_4326, 4326)))
+    colonia_geom_6362_json = column_property(func.ST_AsGeoJSON(
+        colonia_geom_6362))
+    colonia_geom_4326_json = column_property(func.ST_AsGeoJSON(
+        colonia_geom_4326))
     
-    def to_dict(self):
-        data = {
-            'colonia_geom_6362_json': func.ST_AsGeoJSON(
-                func.ST_Transform(self.colonia_geom_6362)),
-            'colonia_geom_4326_json': func.ST_AsGeoJSON(
-                func.ST_Transform(self.colonia_geom_4326))
-    }
-        return data
-
 ## tabla dim_denue
 class DimDenue(Base):
     __tablename__ = "dim_denue"
@@ -50,20 +41,9 @@ class DimDenue(Base):
         Geometry(geometry_type='MULTIPOLYGON',srid = 6362), nullable = True)
     denue_geom_4326 = Column(
         Geometry(geometry_type='MULTIPOLYGON',srid = 4326), nullable = True)
-    denue_geom_6362_json = column_property(
-        func.ST_AsGeoJSON(func.ST_Transform(denue_geom_6362, 6362)))
-    denue_geom_4326_json = column_property(
-        func.ST_AsGeoJSON(func.ST_Transform(denue_geom_4326, 4326)))
-    
-    def to_dict(self):
-        data = {
-            'denue_geom_6362_json': func.ST_AsGeoJSON(
-                func.ST_Transform(self.denue_geom_6362)),
-            'denue_geom_4326_json': func.ST_AsGeoJSON(
-                func.ST_Transform(self.denue_geom_4326))
-    }
-        return data
-    
+    denue_geom_6362_json = column_property(func.ST_AsGeoJSON(denue_geom_6362))
+    denue_geom_4326_json = column_property(func.ST_AsGeoJSON(denue_geom_4326))
+        
 ## tabla dim_entidad
 class DimEntidad(Base):
     __tablename__ = "dim_entidad"
@@ -72,20 +52,11 @@ class DimEntidad(Base):
         Geometry(geometry_type='MULTIPOLYGON',srid = 6362), nullable = True)
     entidad_geom_4326 = Column(
         Geometry(geometry_type='MULTIPOLYGON',srid = 4326), nullable = True)
-    entidad_geom_6362_json = column_property(
-        func.ST_AsGeoJSON(func.ST_Transform(entidad_geom_6362, 6362)))
-    entidad_geom_4326_json = column_property(
-        func.ST_AsGeoJSON(func.ST_Transform(entidad_geom_4326, 4326)))
-    
-    def to_dict(self):
-        data = {
-            'entidad_geom_6362_json': func.ST_AsGeoJSON(
-                func.ST_Transform(self.entidad_geom_6362)),
-            'entidad_geom_4326_json': func.ST_AsGeoJSON(
-                func.ST_Transform(self.entidad_geom_4326))
-    }
-        return data
-    
+    entidad_geom_6362_json = column_property(func.ST_AsGeoJSON(
+        entidad_geom_6362))
+    entidad_geom_4326_json = column_property(func.ST_AsGeoJSON(
+        entidad_geom_6362))
+        
 ## tabla dim_localidad_rural
 class DimLocalidadRural(Base):
     __tablename__ = "dim_localidad_rural"
@@ -94,19 +65,10 @@ class DimLocalidadRural(Base):
         Geometry(geometry_type='MULTIPOLYGON',srid = 6362), nullable = True)
     localidad_rural_geom_4326 = Column(
         Geometry(geometry_type='MULTIPOLYGON',srid = 4326), nullable = True)
-    localidad_rural_geom_6362_json = column_property(
-        func.ST_AsGeoJSON(func.ST_Transform(localidad_rural_geom_6362, 6362)))
-    localidad_rural_geom_4326_json = column_property(
-        func.ST_AsGeoJSON(func.ST_Transform(localidad_rural_geom_4326, 4326)))
-    
-    def to_dict(self):
-        data = {
-            'localidad_rural_geom_6362_json': func.ST_AsGeoJSON(
-                func.ST_Transform(self.localidad_rural_geom_6362)),
-            'localidad_rural_geom_4326_json': func.ST_AsGeoJSON(
-                func.ST_Transform(self.localidad_rural_geom_4326))
-    }
-        return data
+    localidad_rural_geom_6362_json = column_property(func.ST_AsGeoJSON(
+        localidad_rural_geom_6362))
+    localidad_rural_geom_4326_json = column_property(func.ST_AsGeoJSON(
+        localidad_rural_geom_4326))
 
 ## tabla dim_localidad_urbana
 class DimLocalidadUrbana(Base):
@@ -116,19 +78,10 @@ class DimLocalidadUrbana(Base):
         Geometry(geometry_type='MULTIPOLYGON',srid = 6362), nullable = True)
     localidad_urbana_geom_4326 = Column(
         Geometry(geometry_type='MULTIPOLYGON',srid = 4326), nullable = True)
-    localidad_urbana_geom_6362_json = column_property(
-        func.ST_AsGeoJSON(func.ST_Transform(localidad_urbana_geom_6362, 6362)))
-    localidad_urbana_geom_4326_json = column_property(
-        func.ST_AsGeoJSON(func.ST_Transform(localidad_urbana_geom_4326, 4326)))
-    
-    def to_dict(self):
-        data = {
-            'localidad_urbana_geom_6362_json': func.ST_AsGeoJSON(
-                func.ST_Transform(self.localidad_urbana_geom_6362)),
-            'localidad_urbana_geom_4326_json': func.ST_AsGeoJSON(
-                func.ST_Transform(self.localidad_urbana_geom_4326))
-    }
-        return data
+    localidad_urbana_geom_6362_json = column_property(func.ST_AsGeoJSON(
+        localidad_urbana_geom_6362))
+    localidad_urbana_geom_4326_json = column_property(func.ST_AsGeoJSON(
+        localidad_urbana_geom_4326))
 
 ## tabla dim_manzana
 class DimManzana(Base):
@@ -138,19 +91,10 @@ class DimManzana(Base):
         Geometry(geometry_type='MULTIPOLYGON',srid = 6362), nullable = True)
     manzana_geom_4326 = Column(
         Geometry(geometry_type='MULTIPOLYGON',srid = 4326), nullable = True)
-    manzana_geom_6362_json = column_property(
-        func.ST_AsGeoJSON(func.ST_Transform(manzana_geom_6362, 6362)))
-    manzana_geom_4326_json = column_property(
-        func.ST_AsGeoJSON(func.ST_Transform(manzana_geom_4326, 4326)))
-    
-    def to_dict(self):
-        data = {
-            'manzana_geom_6362_json': func.ST_AsGeoJSON(
-                func.ST_Transform(self.manzana_geom_6362)),
-            'manzana_geom_4326_json': func.ST_AsGeoJSON(
-                func.ST_Transform(self.manzana_geom_4326))
-    }
-        return data
+    manzana_geom_6362_json = column_property(func.ST_AsGeoJSON(
+        manzana_geom_6362))
+    manzana_geom_4326_json = column_property(func.ST_AsGeoJSON(
+        manzana_geom_4326))
 
 ## tabla dim_municipio
 class DimMunicipio(Base):
@@ -160,18 +104,8 @@ class DimMunicipio(Base):
         Geometry(geometry_type='MULTIPOLYGON',srid = 6362), nullable = True)
     municipio_geom_4326 = Column(
         Geometry(geometry_type='MULTIPOLYGON',srid = 4326), nullable = True)
-    municipio_geom_6362_json = column_property(
-        func.ST_AsGeoJSON(func.ST_Transform(municipio_geom_6362, 6362)))
-    municipio_geom_4326_json = column_property(
-        func.ST_AsGeoJSON(func.ST_Transform(municipio_geom_4326, 4326)))
-    
-    def to_dict(self):
-        data = {
-            'municipio_geom_6362_json': func.ST_AsGeoJSON(
-                func.ST_Transform(self.municipio_geom_6362)),
-            'municipio_geom_4326_json': func.ST_AsGeoJSON(
-                func.ST_Transform(self.municipio_geom_4326))
-    }
-        return data
-
+    municipio_geom_6362_json = column_property(func.ST_AsGeoJSON(
+        municipio_geom_6362))
+    municipio_geom_4326_json = column_property(func.ST_AsGeoJSON(
+        municipio_geom_4326))
 Base.prepare(engine, reflect = True)
