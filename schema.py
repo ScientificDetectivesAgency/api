@@ -46,6 +46,7 @@ class DimColonia(gsqa.SQLAlchemyObjectType):
     class Meta:
         model = DimColonia
         interfaces = (relay.Node, )
+        exclude_fields = ('colonia_geom_6362', 'colonia_geom_4326')
 
 # DimColoniaAgebUrbana
 class DimColoniaAgebUrbana(gsqa.SQLAlchemyObjectType):
@@ -133,6 +134,7 @@ class DimDenue(gsqa.SQLAlchemyObjectType):
     class Meta:
         model = DimDenue
         interfaces = (relay.Node, )
+        exclude_fields = ('denue_geom_6362', 'denue_geom_4326')
 
 # DimEntidad
 class DimEntidad(gsqa.SQLAlchemyObjectType):
@@ -149,7 +151,8 @@ class DimEntidad(gsqa.SQLAlchemyObjectType):
 
     class Meta:
         model = DimEntidad
-        interfaces = (relay.Node, )                      
+        interfaces = (relay.Node, )
+        exclude_fields = ('entidad_geom_6362', 'entidad_geom_4326')
 
 # DimIndicador
 class DimIndicador(gsqa.SQLAlchemyObjectType):
@@ -184,6 +187,8 @@ class DimLocalidadRural(gsqa.SQLAlchemyObjectType):
     class Meta:
         model = DimLocalidadRural
         interfaces = (relay.Node, )
+        exclude_fields = ('localidad_rural_geom_6362',
+                          'localidad_rural_geom_4326')
 
 # DimLocalidadUrbana
 class DimLocalidadUrbana(gsqa.SQLAlchemyObjectType):
@@ -201,6 +206,8 @@ class DimLocalidadUrbana(gsqa.SQLAlchemyObjectType):
     class Meta:
         model = DimLocalidadUrbana
         interfaces = (relay.Node, )
+        exclude_fields = ('localidad_urbana_geom_6362',
+                          'localidad_urbana_geom_4326')
 
 # DimManzana
 class DimManzana(gsqa.SQLAlchemyObjectType):
@@ -218,6 +225,7 @@ class DimManzana(gsqa.SQLAlchemyObjectType):
     class Meta:
         model = DimManzana
         interfaces = (relay.Node, )
+        exclude_fields = ('manzana_geom_6362', 'manzana_geom_4326')
 
 # DimMunicipio
 class DimMunicipio(gsqa.SQLAlchemyObjectType):
@@ -235,6 +243,7 @@ class DimMunicipio(gsqa.SQLAlchemyObjectType):
     class Meta:
         model = DimMunicipio
         interfaces = (relay.Node, )
+        exclude_fields = ('municipio_geom_6362', 'municipio_geom_4326')
 
 # FactAgebUrbana
 class FactAgebUrbana(gsqa.SQLAlchemyObjectType):
